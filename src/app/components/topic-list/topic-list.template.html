@@ -1,0 +1,35 @@
+<div ui-view></div>
+<!--Header starts-->
+<fc-category></fc-category>
+<!--Header ends-->
+
+<!--Topic list starts-->
+<md-content class="md-padding" layout-xs="column">
+<div flex-xs flex-gt-xs="33" layout="column" class="col-md-4" ng-repeat="topic in topicCtrl.topics">
+    <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{topic.name}}</span>
+                <span class="md-subhead">Collection amount({{topic.collectionAmount}})</span>
+            </md-card-title-text>
+            <md-card-title-media>
+                <div class="md-media-sm card-media"><img src="{{topic.image}}"></div>
+            </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ui-sref="collections({topicId: topic.id})">View collections</md-button>
+        </md-card-actions>
+    </md-card>
+</div>
+</md-content>
+<!--Topic list ends-->
+
+
+
+
+
+
+<!--div ng-repeat="topic in topicCtrl.topics">
+    <h1>{{topic.name}}</h1>
+    <h2>{{topic.collectionAmount}}</h2>
+</div-->

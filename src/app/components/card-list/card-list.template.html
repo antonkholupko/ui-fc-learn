@@ -1,0 +1,21 @@
+<!--Header starts-->
+<fc-collection></fc-collection>
+<!--Header ends-->
+
+<!--Card list starts-->
+<md-content class="md-padding" layout-xs="column">
+    <div flex-xs flex-gt-xs="33" layout="column" class="col-md-4" ng-repeat="card in cardCtrl.cards">
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Card #{{card.id}}</span>
+                    <span class="md-subhead">{{card.question}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button ui-sref="card({id: card.id})">View card</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</md-content>
+<!--Card list ends-->

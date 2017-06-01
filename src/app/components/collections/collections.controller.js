@@ -1,7 +1,7 @@
 angular.module('app')
     .component('fcCollectionList', {
-        controller: ['collectionService', '$stateParams',
-            function (collectionService, $stateParams) {
+        controller: ['collectionService', '$stateParams','$state',
+            function (collectionService, $stateParams, $state) {
 
                 var ctrl = this;
 
@@ -10,6 +10,10 @@ angular.module('app')
                 }).catch(function () {
 
                 });
+
+                ctrl.viewCards = function (collectionId) {
+                    $state.go('cards', {categoryId: $stateParams.categoryId, topicId: $stateParams.topicId, collectionId: collectionId});
+                };
             }],
         template: require('./collection-list.template.html'),
         controllerAs: 'collectionCtrl'

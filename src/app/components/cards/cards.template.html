@@ -13,7 +13,7 @@
                 </md-card-title-text>
             </md-card-title>
             <md-card-actions layout="row" layout-align="end center">
-                <md-button ui-sref="card({id: card.id})">View card</md-button>
+                <md-button ng-click="cardCtrl.viewCard(card.id)">View card</md-button>
             </md-card-actions>
         </md-card>
     </div>

@@ -1,7 +1,7 @@
 angular.module('app')
     .component('fcTopicList', {
-        controller: ['topicService', '$stateParams',
-            function (topicService, $stateParams) {
+        controller: ['topicService', '$stateParams', '$state',
+            function (topicService, $stateParams, $state) {
 
                 var ctrl = this;
 
@@ -10,6 +10,10 @@ angular.module('app')
                 }).catch(function () {
 
                 });
+
+                this.viewCollections = function (topicId) {
+                    $state.go('collections',{categoryId: $stateParams.categoryId, topicId: topicId});
+                };
             }],
         template: require('./topic-list.template.html'),
         controllerAs: 'topicCtrl'

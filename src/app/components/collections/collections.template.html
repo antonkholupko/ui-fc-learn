@@ -9,18 +9,15 @@
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">{{collection.name}}</span>
-                    <span class="md-subhead">{{collection.description}}</span>
+                    <span class="md-subhead">{{collection.description | limitTo:60}}...</span>
                     <br/>
                     <span class="md-subhead">Modified: {{collection.modified}}</span>
                 </md-card-title-text>
-                <md-card-title-media>
-                    <div class="md-media-sm card-media"><img src="{{collection.image}}"></div>
-                </md-card-title-media>
             </md-card-title>
             <md-card-actions layout="row" layout-align="end center">
                 <span class="md-subhead">Card amount({{collection.cardsAmount}})</span>
-                <md-button ui-sref="">{{collection.rating}}</md-button>
-                <md-button ui-sref="cards({collectionId: collection.id})">View cards</md-button>
+                <md-button ui-sref=""><span class="glyphicon glyphicon-heart"></span> {{collection.rating}}</md-button>
+                <md-button ng-click="collectionCtrl.viewCards(collection.id)">View cards</md-button>
             </md-card-actions>
         </md-card>
     </div>

@@ -12,12 +12,9 @@
                 <span class="md-headline">{{topic.name}}</span>
                 <span class="md-subhead">Collection amount({{topic.collectionAmount}})</span>
             </md-card-title-text>
-            <md-card-title-media>
-                <div class="md-media-sm card-media"><img src="{{topic.image}}"></div>
-            </md-card-title-media>
         </md-card-title>
         <md-card-actions layout="row" layout-align="end center">
-            <md-button ui-sref="collections({topicId: topic.id})">View collections</md-button>
+            <md-button ng-click="topicCtrl.viewCollections(topic.id)">View collections</md-button>
         </md-card-actions>
     </md-card>
 </div>

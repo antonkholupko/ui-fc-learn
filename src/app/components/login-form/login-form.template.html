@@ -2,10 +2,10 @@
 
     <md-content>
         <md-toolbar>
-            <div class="md-toolbar-tools">
+            <div class="md-toolbar-tools toolbar-color">
                 <h2>WELCOME</h2>
                 <span flex></span>
-                <md-button class="md-icon-button" ng-click="loginFormCtrl.cancel()">
+                <md-button class="md-icon-button btn-like" ng-click="loginFormCtrl.cancel()">
                     <span class="glyphicon glyphicon-remove"></span>
                 </md-button>
             </div>
@@ -13,54 +13,52 @@
         <md-tabs md-dynamic-height="" md-border-bottom="">
             <md-tab label="{{'LOGIN' | translate}}">
                 <md-content class="md-padding">
-                    <h1 class="md-display-2">{{'LOGIN' | translate}}</h1>
+                    <h4 ng-if="loginFormCtrl.regMsg" class="text-success">Регистрация прошла успешно</h4>
+                    <h3 class="md-display-2">{{'LOGIN' | translate}}</h3>
                     <md-input-container class="md-block" flex-gt-sm="">
-                        <label>Login</label>
-                        <input type="text" ng-model="user.firstName">
+                        <label>Имя пользователя</label>
+                        <input type="text" ng-model="loginFormCtrl.user.login">
                     </md-input-container>
                     <md-input-container class="md-block" flex-gt-sm="">
-                        <label>E-mail</label>
-                        <input type="email" ng-model="user.firstName">
-                    </md-input-container>
-                    <md-input-container class="md-block" flex-gt-sm="">
-                        <label>Password</label>
-                        <input type="password" ng-model="user.firstName">
+                        <label>Пароль</label>
+                        <input type="password" ng-model="loginFormCtrl.user.password">
                     </md-input-container>
                     <div class="text-center">
-                        <md-button ng-click="loginFormCtrl.cancel()" class="md-raised md-primary btn-green"
+                        <md-button ng-click="loginFormCtrl.signIn()" class="btn-green"
                                    style="font-family: Montserrat, sans-serif;"><span
-                                class="glyphicon glyphicon-log-in"></span>&nbsp;Sign in
+                                class="glyphicon glyphicon-log-in"></span>&nbsp;Войти
                         </md-button>
-                        <md-button ng-click="loginFormCtrl.cancel()" class="md-raised md-primary btn-red"
+                        <md-button ng-click="loginFormCtrl.cancel()" class="btn-red"
                                    style="font-family: Montserrat, sans-serif;"><span
-                                class="glyphicon glyphicon-remove"></span>&nbsp;Cancel
+                                class="glyphicon glyphicon-remove"></span>&nbsp;Отмена
                         </md-button>
                     </div>
                 </md-content>
             </md-tab>
             <md-tab label="{{'REGISTER' | translate}}">
                 <md-content class="md-padding">
-                    <h1 class="md-display-2">{{'REGISTER' | translate}}</h1>
+                    <h3 class="md-display-2">{{'REGISTER' | translate}}</h3>
                     <md-input-container class="md-block" flex-gt-sm="">
-                        <label>Login</label>
-                        <input type="text" ng-model="user.firstName">
+                        <label>Имя пользователя</label>
+                        <input type="text" ng-model="loginFormCtrl.user.login">
                     </md-input-container>
                     <md-input-container class="md-block" flex-gt-sm="">
                         <label>E-mail</label>
-                        <input type="email" ng-model="user.firstName">
+                        <input type="email" ng-model="loginFormCtrl.user.email">
                     </md-input-container>
                     <md-input-container class="md-block" flex-gt-sm="">
-                        <label>Password</label>
-                        <input type="password" ng-model="user.firstName">
+                        <label>Пароль</label>
+                        <input type="password" ng-model="loginFormCtrl.user.password">
                     </md-input-container>
                     <md-input-container class="md-block" flex-gt-sm="">
-                        <label>Password confirmation</label>
-                        <input type="password" ng-model="user.firstName">
+                        <label>Подтвердите пароль</label>
+                        <input type="password" ng-model="loginFormCtrl.user.passwordConfirmation">
                     </md-input-container>
                     <div class="text-center">
-                        <md-button class="md-raised md-primary btn-black"><span class="glyphicon glyphicon-user">&nbsp;Register</span>
+                        <md-button ng-click="loginFormCtrl.register()"
+                                   class="btn-green"><span class="glyphicon glyphicon-user">&nbsp;Register</span>
                         </md-button>
-                        <md-button ng-click="loginFormCtrl.cancel()" class="md-raised md-primary btn-red"
+                        <md-button ng-click="loginFormCtrl.cancel()" class="btn-red"
                                    style="font-family: Montserrat, sans-serif;"><span
                                 class="glyphicon glyphicon-remove"></span>&nbsp;Cancel
                         </md-button>

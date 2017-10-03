@@ -14,8 +14,8 @@ angular.module('app')
             return topicResource.query({categoryId: categoryId, page: page, size: size}).$promise;
         };
 
-        this.getTopic = function (id) {
-            return topicResource.get({id: id}).$promise;
+        this.getTopic = function (categoryId, id) {
+            return topicResource.get({categoryId: categoryId, id: id}).$promise;
         };
 
     }]);

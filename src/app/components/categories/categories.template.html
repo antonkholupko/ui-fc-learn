@@ -1,32 +1,28 @@
-<!--Categories list header starts-->
 <div id="myCarousel" class="carousel slide visible-md visible-lg" data-ride="carousel">
     <div class="carousel-inner" role="listbox">
         <div class="item active">
             <div class="fill image-container-400">
-                <img src="img/main-page-flash-cards.jpg" alt="Categories">
+                <img src="img/categories-img.jpeg" alt="Categories">
             </div>
             <div class="carousel-caption">
-                <h3>Categories</h3>
+                <h3>{{"CATEGORIES" | translate}}</h3>
             </div>
         </div>
     </div>
 </div>
-<!-- Categories list header ends-->
 
-<!-- Categories list starts-->
 <md-content class="md-padding" layout-xs="column">
     <div flex-xs flex-gt-xs="33" layout="column" class="col-md-4" ng-repeat="category in categoryCtrl.categories">
         <md-card>
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">{{category.name}}</span>
-                    <span class="md-subhead">Topics amount({{category.topicAmount}})</span>
+                    <span class="md-subhead">{{"TOPIC_AMOUNT" | translate}}({{category.topicAmount}})</span>
                 </md-card-title-text>
             </md-card-title>
             <md-card-actions layout="row" layout-align="end center">
-                <md-button ui-sref="topics({categoryId: category.id})">View topics</md-button>
+                <md-button ui-sref="topics({categoryId: category.id})" class="btn-gray">{{"VIEW_TOPICS" | translate}}</md-button>
             </md-card-actions>
         </md-card>
     </div>
 </md-content>
-<!--Categories list ends-->

@@ -1,11 +1,31 @@
-<md-content>
-    <div flex-xs flex-gt-xs="80" layout="column">
+<md-content class="min-width">
+    <div flex-xs flex-gt-xs="80" layout="column" class="single-card">
         <md-card>
-            <p style="font-size: 30pt; padding : 10%">{{singleCardCtrl.card.question}}</p>
-            <md-card-actions layout="row">
-                <md-button ui-sref="" class="">
-                     xxx
+            <p style="font-size: 30px; padding : 5%">{{"CARD" | translate}} #{{singleCardCtrl.card.id}}</p>
+            <p style="font-size: 30px; padding-left: 5%">Вопрос: </p>
+            <p style="font-size: 30px; padding-left: 10%; padding-right:  10%">{{singleCardCtrl.card.question}}</p>
+
+            <!--FOR QUESTION-->
+            <md-card-actions class="action-row">
+                <md-button ng-click="singleCardCtrl.showAnswer()" class="btn-gray"
+                           ng-hide="singleCardCtrl.hideShowAnswerBtn">
+                    {{"SHOW_ANSWER" | translate}}
+                </md-button>
             </md-card-actions>
+            <!--FOR QUESTION-->
+            <p style="font-size: 30px; padding-left: 5%" ng-hide="!singleCardCtrl.hideShowAnswerBtn">Ответ: </p>
+            <p style="font-size: 30px; padding-left: 10%; padding-right:  10%" ng-hide="!singleCardCtrl.hideShowAnswerBtn">{{singleCardCtrl.card.answer}}</p>
+            <!--FOR ANSWER-->
+            <md-card-actions layout="row" class="action-row">
+                <md-button ng-click="singleCardCtrl.getNextCard(true)" class="btn-green"
+                           ng-hide="!singleCardCtrl.hideShowAnswerBtn"> {{"I_KNOW" | translate}}
+                </md-button>
+                <md-button ng-click="singleCardCtrl.getNextCard(false)" class="btn-red"
+                           ng-hide="!singleCardCtrl.hideShowAnswerBtn"> {{"I_DONT_KNOW" | translate}}
+                </md-button>
+            </md-card-actions>
+            <!--FOR ANSWER-->
+
         </md-card>
     </div>
 </md-content>

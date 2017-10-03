@@ -6,14 +6,17 @@
             </div>
             <div class="carousel-caption">
                 <h3>{{collectionCtrl.topic.name}}</h3>
-                <h3>{{"COLLECTIONS" | translate}}</h3>
+                <h3>Вы изучаете коллекции:</h3>
             </div>
         </div>
     </div>
 </div>
 
 <md-content class="md-padding" layout-xs="column">
-    <div flex-xs flex-gt-xs="50" layout="column" class="col-md-6" ng-repeat="collection in collectionCtrl.collections">
+
+    <h2 ng-if="myCollectionCtrl.collections.length === 0" class="text-center">У вас нет коллекций. Пожалуйста, перейдите в раздел <a ui-sref="categories">категории.</a></h2>
+
+    <div flex-xs flex-gt-xs="50" layout="column" class="col-md-6" ng-repeat="collection in myCollectionCtrl.collections">
         <md-card>
             <md-card-title>
                 <md-card-title-text>
@@ -26,8 +29,7 @@
             <md-card-actions layout="row" layout-align="end center" class="action-collections">
                 <span class="md-subhead">{{"CARD_AMOUNT" | translate}}({{collection.cardsAmount}})</span>
                 <md-button ui-sref="" class="btn-like"><span class="glyphicon glyphicon-heart btn-like"></span> {{collection.rating}}</md-button>
-                <md-button ng-click="collectionCtrl.addToMine(collection.id)" class="btn-green">{{"ADD_TO_MINE" | translate}}</md-button>
-                <md-button ng-click="collectionCtrl.viewCards(collection.id)" class="btn-gray">{{"VIEW_CARDS" | translate}}</md-button>
+                <md-button ng-click="myCollectionCtrl.viewCards(collection.id)" class="btn-gray">Начать тренинг</md-button>
             </md-card-actions>
         </md-card>
     </div>

@@ -1,32 +1,28 @@
-<div ui-view></div>
-<!--Header starts-->
-<fc-category></fc-category>
-<!--Header ends-->
-
-<!--Topic list starts-->
+<div id="myCarousel" class="carousel slide visible-md visible-lg" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="fill image-container-400">
+                <img src="img/topics.jpg" alt="Categories">
+            </div>
+            <div class="carousel-caption">
+                <h3>{{topicCtrl.category.name}}</h3>
+                <h3>{{"TOPICS" | translate}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
 <md-content class="md-padding" layout-xs="column">
 <div flex-xs flex-gt-xs="33" layout="column" class="col-md-4" ng-repeat="topic in topicCtrl.topics">
     <md-card>
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">{{topic.name}}</span>
-                <span class="md-subhead">Collection amount({{topic.collectionAmount}})</span>
+                <span class="md-subhead">{{"COLLECTION_AMOUNT" | translate}}({{topic.collectionAmount}})</span>
             </md-card-title-text>
         </md-card-title>
         <md-card-actions layout="row" layout-align="end center">
-            <md-button ng-click="topicCtrl.viewCollections(topic.id)">View collections</md-button>
+            <md-button ng-click="topicCtrl.viewCollections(topic.id)" class="btn-gray">{{"VIEW_COLLECTIONS" | translate}}</md-button>
         </md-card-actions>
     </md-card>
 </div>
 </md-content>
-<!--Topic list ends-->
-
-
-
-
-
-
-<!--div ng-repeat="topic in topicCtrl.topics">
-    <h1>{{topic.name}}</h1>
-    <h2>{{topic.collectionAmount}}</h2>
-</div-->

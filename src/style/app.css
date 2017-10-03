@@ -13,12 +13,22 @@ body > .container-fluid {
     padding-right: 0;
     padding-left: 0;
 }
-
+section > .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+}
 footer {
     background-color: #464547;
     color: #ccc;
     width: 100%;
     border-top: solid;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 footer a {
     color: #688b8a;
@@ -27,7 +37,14 @@ footer a:hover {
     color: #688b8a;
     text-decoration: none;
 }
-
+section.layout-row {
+    padding-top: 52px;
+    padding-bottom: 130px;
+}
+.wrapper {
+    min-height: 100%;
+    position: relative;
+}
 .navbar {
     margin-bottom: 0;
     background-color: #39c2d7;
@@ -35,6 +52,9 @@ footer a:hover {
     font-size: 11px !important;
     letter-spacing: 4px;
     opacity: 0.95;
+}
+.navbar li {
+    cursor: pointer;
 }
 .navbar li a, .navbar .navbar-brand {
     color: #fff !important;
@@ -71,6 +91,15 @@ div.carousel .fill {
     background-position: center;
     background-size: cover;
 }
+
+.sidenav {
+    padding-top: 50px;
+}
+
+md-sidenav .button {
+    width: 90%;
+}
+
 .carousel-inner img {
     width: 100%; /* Set width to 100% */
     margin: auto;
@@ -133,4 +162,66 @@ md-content.left-right-20-paddings {
     padding-left: 20%;
     padding-right: 20%;
     background-color: #9ad3de;
+}
+
+.btn-green {
+    background-color: #7f993a;
+    color: white;
+}
+
+.btn-red {
+    background-color: #b22746;
+    color: white;
+}
+
+.btn-gray {
+    background-color: #464547;
+    color: white;
+}
+
+.btn-like {
+    color: #b22746;
+}
+
+.toolbar-color {
+    background-color: #464547;
+}
+.card-row {
+    display: flex;
+    align-items: stretch;
+}
+.card-row ._md {
+    height: 100%;
+}
+.single-card {
+    margin: 0 auto;
+}
+.action-row {
+    align-self: center;
+}
+.side-menu {
+    padding-left: 0;
+}
+.side-menu li{
+    border-bottom: 1px solid #eee;
+}
+.side-menu li button{
+    width: 100%;
+    margin: 0;
+    padding: 12px 0;
+}
+.min-width {
+    min-width: 700px;
+    margin-top: 30px;
+    background-color: transparent;
+}
+@media (max-width: 992px) {
+    .action-collections{
+        flex-direction: column;
+    }
+}
+
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
+    color: #9ad3de;
+    background: #9ad3de;
 }

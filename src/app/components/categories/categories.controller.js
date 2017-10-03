@@ -11,6 +11,6 @@ angular.module('app')
 
                 });
             }],
-        template: require('./category-list.template.html'),
+        template: require('./categories.template.html'),
         controllerAs: 'categoryCtrl'
     });

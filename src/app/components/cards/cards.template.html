@@ -1,21 +1,60 @@
-<!--Header starts-->
-<fc-collection></fc-collection>
-<!--Header ends-->
-
-<!--Card list starts-->
+<div id="myCarousel" class="carousel slide visible-md visible-lg" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="fill image-container-400">
+                <img src="img/cards.jpg" alt="Collection">
+            </div>
+            <div class="carousel-caption">
+                <h3>{{cardCtrl.collection.name}}</h3>
+                <h3>{{"CARDS" | translate}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
 <md-content class="md-padding" layout-xs="column">
-    <div flex-xs flex-gt-xs="33" layout="column" class="col-md-4" ng-repeat="card in cardCtrl.cards">
-        <md-card>
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">Card #{{card.id}}</span>
-                    <span class="md-subhead">{{card.question}}</span>
-                </md-card-title-text>
-            </md-card-title>
-            <md-card-actions layout="row" layout-align="end center">
-                <md-button ng-click="cardCtrl.viewCard(card.id)">View card</md-button>
-            </md-card-actions>
-        </md-card>
+    <div class="card-row">
+        <div flex-xs flex-gt-xs="33" layout="column" class="col-md-4" ng-repeat="card in cardCtrl.cards | limitTo:3:0">
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{"CARD" | translate}} #{{card.id}}</span>
+                        <span class="md-subhead">{{card.question}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button ng-click="cardCtrl.viewCard(card.id)" class="btn-gray">{{"VIEW_CARD" | translate}}</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </div>
+    <div class="card-row">
+        <div flex-xs flex-gt-xs="33" layout="column" class="col-md-4" ng-repeat="card in cardCtrl.cards | limitTo:3:3">
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{"CARD" | translate}} #{{card.id}}</span>
+                        <span class="md-subhead">{{card.question}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button ng-click="cardCtrl.viewCard(card.id)" class="btn-gray">{{"VIEW_CARD" | translate}}</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </div>
+    <div class="card-row">
+        <div flex-xs flex-gt-xs="33" layout="column" class="col-md-4" ng-repeat="card in cardCtrl.cards | limitTo:3:6">
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{"CARD" | translate}} #{{card.id}}</span>
+                        <span class="md-subhead">{{card.question}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button ng-click="cardCtrl.viewCard(card.id)" class="btn-gray">{{"VIEW_CARD" | translate}}</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
     </div>
 </md-content>
-<!--Card list ends-->
